@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root{font-family:Inter,system-ui,sans-serif;color:var(--figma-color-text);background:var(--figma-color-bg);font-size:12px}*{box-sizing:border-box}body{margin:0;overflow:hidden}.app{height:680px;display:flex;flex-direction:column}.head{padding:18px 18px 14px;background:#280ccd;color:white}.brand{display:flex;align-items:center;justify-content:space-between}.brand h1{font-size:18px;margin:0;letter-spacing:-.03em}.badge{color:#280ccd;background:#dfff22;border-radius:999px;padding:5px 9px;font-weight:700;font-size:10px}.head p{margin:7px 0 0;opacity:.72;line-height:1.4}.scope{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:12px 14px;border-bottom:1px solid var(--figma-color-border)}button{border:0;font:inherit;cursor:pointer}.scope button{padding:9px 5px;border-radius:8px;color:var(--figma-color-text-secondary);background:var(--figma-color-bg-secondary);font-weight:600}.scope button.active{background:#280ccd;color:white}.toolbar{display:flex;align-items:center;justify-content:space-between;padding:8px 14px}.toolbar span{color:var(--figma-color-text-secondary)}.toolbar button{background:none;color:#280ccd;font-weight:600;padding:4px}.list-wrap{position:relative;flex:1;min-height:0}.frame-list{height:100%;overflow:auto;list-style:none;margin:0;padding:0 10px 10px}.frame-item{display:grid;grid-template-columns:26px 28px 1fr auto;align-items:center;gap:8px;padding:10px 6px;border-bottom:1px solid var(--figma-color-border)}.frame-number{font:10px ui-monospace,monospace;color:var(--figma-color-text-tertiary)}.frame-copy{min-width:0}.frame-copy b,.frame-copy small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.frame-copy b{font-size:12px}.frame-copy small{color:var(--figma-color-text-secondary);margin-top:3px}.frame-check input{position:absolute;opacity:0}.fake-check{display:grid;width:18px;height:18px;border:1px solid var(--figma-color-border-strong);border-radius:5px}.frame-check input:checked+.fake-check{background:#280ccd;border-color:#280ccd}.frame-check input:checked+.fake-check:after{content:"✓";place-self:center;color:#dfff22;font-weight:800}.frame-actions{display:flex;gap:3px}.frame-actions button{width:25px;height:25px;border-radius:6px;color:var(--figma-color-text);background:var(--figma-color-bg-secondary)}.frame-actions button:disabled{opacity:.25}.empty{position:absolute;inset:0;display:grid;place-content:center;text-align:center;color:var(--figma-color-text-secondary);padding:30px;line-height:1.5}.hidden{display:none!important}.footer{padding:12px 14px 14px;border-top:1px solid var(--figma-color-border);background:var(--figma-color-bg)}.filename{display:flex;align-items:center;gap:8px;margin-bottom:10px}.filename label{font-weight:600}.filename input{flex:1;border:1px solid var(--figma-color-border);border-radius:7px;background:var(--figma-color-bg);color:var(--figma-color-text);padding:8px;outline:none}.progress{height:3px;background:var(--figma-color-bg-secondary);overflow:hidden;border-radius:10px}.progress i{display:block;width:0;height:100%;background:#dfff22;transition:width .2s}.status{display:block;height:30px;padding-top:7px;color:var(--figma-color-text-secondary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.footer-actions{display:flex;gap:8px}.primary{flex:1;border-radius:9px;padding:11px 14px;background:#280ccd;color:white;font-weight:700}.primary:disabled{opacity:.4;cursor:default}.secondary{border-radius:9px;padding:11px 14px;background:var(--figma-color-bg-secondary);color:var(--figma-color-text)}
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <header class="head"><div class="brand"><h1>Portfolio PDF Exporter</h1><span class="badge">LOCAL</span></div><p>Frame’leri sırala, seç ve tek PDF olarak indir.</p></header>
+      <section class="scope">
+        <button type="button" data-scope="selected" class="active">Seçili</button>
+        <button type="button" data-scope="same-size">Aynı ölçü</button>
+        <button type="button" data-scope="all">Tüm sayfa</button>
+      </section>
+      <div class="toolbar"><span>PDF sayfaları</span><div><button id="select-all" type="button">Tümü</button><button id="select-none" type="button">Hiçbiri</button></div></div>
+      <section class="list-wrap"><ol id="frame-list" class="frame-list"></ol><div id="empty" class="empty">Canvas’ta bir veya birkaç üst seviye frame seç.<br />Portfolyo için “Aynı ölçü” seçeneğini de kullanabilirsin.</div></section>
+      <footer class="footer">
+        <div class="filename"><label for="filename">Dosya</label><input id="filename" value="cemre-ceylan-portfolyo" /></div>
+        <div class="progress"><i id="progress-bar"></i></div><span id="status" class="status">Hazır.</span>
+        <div class="footer-actions"><button id="cancel" type="button" class="secondary hidden">İptal</button><button id="export" type="button" class="primary" disabled>Tek PDF oluştur</button></div>
+      </footer>
+    </main>
+    <!-- SCRIPT -->
+  </body>
+</html>

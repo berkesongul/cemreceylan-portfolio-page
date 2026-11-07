@@ -1,0 +1,12 @@
+{
+  "name": "Portfolio PDF Exporter",
+  "id": "1568904435721892345",
+  "api": "1.0.0",
+  "editorType": ["figma"],
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": ["none"]
+  }
+}

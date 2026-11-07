@@ -1,0 +1,15 @@
+:root{--category-accent:#d6c2b5}
+body.work-page{background:#f3f0eb}
+.work-header{position:fixed;z-index:20;top:0;left:0;right:0;height:92px;padding:0 var(--pad);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;background:rgba(243,240,235,.82);border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}
+.work-back{text-decoration:none;display:flex;align-items:center;gap:10px;font-size:13px}.work-back span{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center}
+.work-header .brand{justify-self:center}.work-header .local-time{justify-self:end}
+.work-hero{padding:190px var(--pad) 78px;background:radial-gradient(circle at 82% 30%,var(--category-accent),transparent 34%)}
+.work-hero-grid{display:grid;grid-template-columns:1.25fr .55fr;gap:clamp(40px,8vw,150px);align-items:end}
+.work-hero h1{font-size:clamp(72px,10vw,170px);line-height:.84;letter-spacing:-.075em;margin:24px 0 0;max-width:1200px}
+.work-hero-side{padding-bottom:12px}.work-hero-side p{line-height:1.7;color:#625d57;margin:0 0 36px}.work-count{display:flex;justify-content:space-between;padding-top:15px;border-top:1px solid var(--line);font:10px "DM Mono";text-transform:uppercase;letter-spacing:.12em}
+.category-nav{display:flex;gap:8px;overflow-x:auto;padding:24px var(--pad);border-top:1px solid var(--line);border-bottom:1px solid var(--line);scrollbar-width:none;background:#f3f0eb;position:sticky;top:92px;z-index:15}
+.category-nav a{flex:0 0 auto;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:12px 16px;font-size:13px}.category-nav a.is-active{background:var(--ink);color:white}
+.work-gallery{padding:60px var(--pad) 130px}.work-gallery .portfolio-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+.work-footer{margin-top:0;border-top:1px solid var(--line);padding:34px var(--pad);display:flex;justify-content:space-between;font-size:12px}.work-footer a{text-decoration:none}
+@media(max-width:1100px){.work-gallery .portfolio-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:760px){.work-header{height:76px;grid-template-columns:1fr auto}.work-header .brand{display:none}.work-header .local-time{padding:12px 14px}.work-hero{padding-top:140px}.work-hero-grid{grid-template-columns:1fr}.work-hero h1{font-size:18vw}.category-nav{top:76px}.work-gallery{padding-top:34px}.work-gallery .portfolio-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.work-footer{flex-direction:column;gap:14px}}
