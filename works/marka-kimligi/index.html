@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="/theme.js"></script>
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/character-page.css" />
     <link rel="stylesheet" href="/brand-page.css" />
@@ -18,7 +19,14 @@
     <header class="character-header">
       <a class="character-back" href="/#work"><span aria-hidden="true">←</span> Çalışmalara dön</a>
       <a class="character-brand" href="/" aria-label="Cemre Ceylan ana sayfa">Cemre<span>®</span></a>
-      <div class="character-status"><span>İzmir</span><strong id="clock">--:--</strong></div>
+      <div class="header-tools">
+        <button class="theme-switch" type="button" role="switch" aria-label="Koyu tema" aria-checked="false">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+            <path d="M20.9 13.35A9 9 0 0 1 10.65 3.1 9 9 0 1 0 20.9 13.35Z" />
+          </svg>
+        </button>
+        <div class="character-status"><span>İzmir</span><strong id="clock">--:--</strong></div>
+      </div>
     </header>
     <main>
       <section class="character-intro" aria-labelledby="brand-title">

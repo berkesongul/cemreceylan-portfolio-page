@@ -81,3 +81,166 @@
 @media(max-width:1100px){.portfolio-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:760px){.archive{padding-top:100px}.archive-head{grid-template-columns:1fr}.portfolio-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.portfolio-image{border-radius:12px}.work-dialog-title{display:none}}
 @media(max-width:420px){.portfolio-grid{grid-template-columns:1fr 1fr}.portfolio-meta b{font-size:11px}.portfolio-meta small{font-size:9px}.archive-toolbar{padding-top:45px}}
+
+/* Shared header theme control */
+.header-tools {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1vw, 14px);
+  white-space: nowrap;
+}
+
+.theme-switch {
+  display: grid;
+  grid-template-columns: 16px 48px;
+  gap: 4px;
+  place-items: center;
+  position: relative;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+}
+
+.theme-switch svg {
+  grid-area: 1 / 1;
+  width: 16px;
+  height: 16px;
+}
+
+.theme-switch::before {
+  content: "";
+  grid-area: 1 / 2;
+  width: 44px;
+  height: 24px;
+  border: 1px solid var(--muted);
+  border-radius: inherit;
+  background: var(--white);
+}
+
+.theme-switch::after {
+  content: "";
+  position: absolute;
+  right: 24px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--ink);
+  transition: transform .2s ease;
+}
+
+.theme-switch[aria-checked="true"]::after {
+  transform: translateX(16px);
+}
+
+.theme-switch:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #191816;
+  --ink: #f1ede7;
+  --muted: #b8b0a6;
+  --line: rgba(241, 237, 231, .22);
+  --white: #25221f;
+  --accent: #ff9077;
+  --surface-raised: #24211e;
+  --surface-inset: #2e2a26;
+  --header-surface: rgba(29, 27, 25, .9);
+  --character-paper: var(--paper);
+  --character-ink: var(--ink);
+  --character-line: var(--line);
+}
+
+[data-theme="dark"] :is(.icon-button, .local-time, .character-header, .work-header) {
+  background: var(--header-surface);
+}
+
+[data-theme="dark"] :is(.character-back:hover span, .portfolio-image, .portrait-card) {
+  background: var(--surface-inset);
+}
+
+[data-theme="dark"] :is(.doors-section, .archive, .category-nav, .web-outro) {
+  background: var(--surface-raised);
+}
+
+[data-theme="dark"] :is(.menu, .contact) {
+  --ink: #121110;
+  --paper: #f1ede7;
+  --white: #f1ede7;
+}
+
+[data-theme="dark"] .door {
+  --ink: #1d1b1a;
+  color: var(--ink);
+}
+
+[data-theme="dark"] :is(.door-caption, .story-sticky, .radar-ring, .magazine-header, .web-project, .app-card:not(.app-card--dark), .app-card:not(.app-card--dark) .app-tags li) {
+  border-color: var(--line);
+}
+
+[data-theme="dark"] .story {
+  background: linear-gradient(135deg, #26302a, transparent 40%, transparent 65%, #242b36);
+}
+
+[data-theme="dark"] :is(.story-counter > i, .timeline-line, .uiux-progress > i) {
+  background: var(--line);
+}
+
+[data-theme="dark"] .radar-ring::before {
+  background: repeating-conic-gradient(from 0deg, var(--line) 0deg .35deg, transparent .35deg 8deg);
+}
+
+[data-theme="dark"] .radar-hand {
+  background: linear-gradient(90deg, var(--muted), transparent);
+}
+
+[data-theme="dark"] :is(.section-heading > p:last-child, .door-caption p, .timeline p, .story-entry h4, .story-entry li, .archive-head > p, .archive-status, .portfolio-meta small, .portfolio-meta i, .character-intro-copy > p, .work-hero-side p, .uiux-stack-heading > p:last-child, .app-card:not(.app-card--dark) .app-description, .web-intro, .web-description) {
+  color: var(--muted);
+}
+
+[data-theme="dark"] :is(.choice-grid button:hover, .category-nav a.is-active, .web-label span) {
+  color: var(--paper);
+}
+
+[data-theme="dark"] :is(.form-step input, .form-step textarea) {
+  color: inherit;
+}
+
+[data-theme="dark"] :is(body.magazine-page, body.work-page) {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+[data-theme="dark"] body.logo-page {
+  --character-line: var(--line);
+}
+
+[data-theme="dark"] .character-outro {
+  --character-ink: #181b17;
+  color: var(--character-ink);
+}
+
+[data-theme="dark"] :is(.magazine-intro h1 i, .magazine-brand span) {
+  color: var(--accent);
+}
+
+[data-theme="dark"] :is(.uiux-hero, .web-hero) {
+  background: radial-gradient(circle at 82% 28%, #303c35, transparent 38%);
+}
+
+[data-theme="dark"] :is(.uiux-stack-section, .web-projects) {
+  background: linear-gradient(180deg, var(--surface-raised), var(--paper) 45%, var(--surface-raised));
+}
+
+[data-theme="dark"] .uiux-page {
+  --uiux-card: var(--surface-inset);
+}
+
+[data-theme="dark"] .web-project {
+  background: var(--surface-inset);
+}
