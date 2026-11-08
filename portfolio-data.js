@@ -42,11 +42,18 @@ export const portfolioCategories = {
     accent: "#bfcfd3",
   },
   internship: {
-    title: "Stajlarım & süreç",
+    title: "TÜBİTAK Stajı Sürecim",
     eyebrow: "Araştırma · Üretim · Sunum",
-    summary: "Araştırmadan sunuma uzanan staj süreçleri, vaka çalışmaları ve üretim notları.",
+    summary: "Popüler Bilim Yayınları ve KİBİ için geliştirdiğim tasarımlarla TÜBİTAK stajı sürecim.",
     path: "/works/stajlarim/",
     accent: "#d2cdb9",
+  },
+  web: {
+    title: "Web tasarım",
+    eyebrow: "Arayüz · Etkileşim · Responsive",
+    summary: "Marka stratejisini, güçlü arayüzleri ve akıcı etkileşimleri yayına hazır web deneyimlerine dönüştüren projeler.",
+    path: "/works/web-tasarim/",
+    accent: "#c9d4ca",
   },
 };
 

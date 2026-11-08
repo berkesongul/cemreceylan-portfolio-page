@@ -1,0 +1,12 @@
+.poster-page{--poster-red:#ef4b37;--poster-cream:#f4e8cf}
+.poster-page .character-brand span{color:var(--poster-red)}
+.poster-page .character-pin{background:radial-gradient(circle at 80% 6%,#6c2630 0,transparent 35%),radial-gradient(circle at 12% 100%,#273e58 0,transparent 34%),#241a22}
+.poster-page .character-world-head h2 em{color:#ff6652}
+.poster-page .character-line::before{background:#e6d5bc}
+.poster-page .character-paper{padding:12px;background:var(--poster-cream)}
+.poster-page .character-paper img{max-width:min(48vw,430px)}
+.poster-page .character-outro{background:var(--poster-red)}
+.poster-page .character-outro a{background:#241a22}
+.poster-page .character-dialog{background:rgba(24,13,19,.96)}
+.poster-page .character-dialog-stage img{max-height:78svh}
+@media(max-width:720px){.poster-page .character-paper img{max-width:70vw}.poster-page .character-paper{padding:9px}}

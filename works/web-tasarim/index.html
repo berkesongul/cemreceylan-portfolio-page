@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="theme-color" content="#e8e5df" />
+  <meta name="description" content="Cemre Ceylan'ın web tasarım ve dijital deneyim projeleri." />
+  <title>Web Tasarım — Cemre Ceylan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/work-page.css" />
+  <link rel="stylesheet" href="/web-design-page.css" />
+</head>
+<body class="work-page web-design-page">
+  <div class="noise" aria-hidden="true"></div>
+  <header class="work-header">
+    <a class="work-back" href="/#work"><span>←</span> Kapılara dön</a>
+    <a class="brand" href="/">Cemre<span>®</span></a>
+    <div class="local-time"><span>İzmir</span><strong id="clock">--:--</strong></div>
+  </header>
+
+  <main>
+    <section class="web-hero" aria-labelledby="web-title">
+      <p class="kicker">Arayüz · Etkileşim · Responsive</p>
+      <h1 id="web-title">Web Tasarım</h1>
+      <p class="web-intro">Marka stratejisini, güçlü arayüzleri ve akıcı etkileşimleri yayına hazır web deneyimlerine dönüştürüyorum.</p>
+      <a class="web-scroll" href="#web-projects">Projeleri keşfet <span>↓</span></a>
+    </section>
+
+    <nav class="category-nav" id="category-nav" aria-label="Çalışma kategorileri"></nav>
+
+    <section class="web-projects" id="web-projects" aria-label="Web tasarım projeleri">
+      <article class="web-project is-visible" style="--project-tint:#d9d3cb">
+        <div class="web-project-copy">
+          <p class="web-label"><span>01</span> Kişisel portfolyo · 2026</p>
+          <h2>Cemre<br />Portfolio</h2>
+          <p class="web-type">Portfolyo sitesi</p>
+          <p class="web-description">Tasarım disiplinlerini ayrı keşif kapılarına dönüştüren, büyük tipografi ve katmanlı etkileşimlerle kişisel hikâyeyi öne çıkaran özgün bir portfolyo deneyimi.</p>
+          <ul class="web-tags"><li>Bilgi mimarisi</li><li>Responsive arayüz</li><li>Hareket tasarımı</li></ul>
+        </div>
+        <figure class="web-project-visual"><img src="/portfolio/pages/web%20tasarim/portfolio-site.png" alt="Cemre Ceylan portfolyo sitesinin masaüstü görünümü" /></figure>
+      </article>
+
+      <article class="web-project web-project--reverse" style="--project-tint:#dfe5c6">
+        <div class="web-project-copy">
+          <p class="web-label"><span>02</span> Sosyal keşif · TYPE</p>
+          <h2>TYPE</h2>
+          <p class="web-type">Ürün landing page</p>
+          <p class="web-description">Yapay zekâ destekli sosyal keşif fikrini cesur tipografi, canlı renk blokları ve ürünün güven odaklı özelliklerini anlatan net bir kullanıcı yolculuğuyla sunan landing page.</p>
+          <ul class="web-tags"><li>Ürün anlatısı</li><li>Görsel sistem</li><li>Dönüşüm akışı</li></ul>
+        </div>
+        <figure class="web-project-visual"><img loading="lazy" src="/portfolio/pages/web%20tasarim/type.png" alt="TYPE sosyal keşif platformu landing page görünümü" /></figure>
+      </article>
+
+      <article class="web-project" style="--project-tint:#c8d6d4">
+        <div class="web-project-copy">
+          <p class="web-label"><span>03</span> AI çalışma alanı · Puble</p>
+          <h2>Puble</h2>
+          <p class="web-type">SaaS ürün sitesi</p>
+          <p class="web-description">Sosyal medya yönetimi, mesajlaşma, içerik üretimi ve planlamayı tek çalışma alanında birleştiren Puble'ın kapsamlı ürün yapısını sade, güven veren ve ölçeklenebilir bir web deneyimine taşıyan tasarım.</p>
+          <ul class="web-tags"><li>SaaS deneyimi</li><li>Dashboard anlatısı</li><li>Design system</li></ul>
+        </div>
+        <figure class="web-project-visual"><img loading="lazy" src="/portfolio/pages/web%20tasarim/puble.png" alt="Puble sosyal çalışma alanı web sitesi görünümü" /></figure>
+      </article>
+    </section>
+
+    <section class="web-outro">
+      <p class="kicker">Yeni bir dijital deneyim</p>
+      <h2>Fikirden yayına,<br /><em>birlikte tasarlayalım.</em></h2>
+      <a class="pill pill-dark" href="/#contact">Birlikte çalışalım <span>↗</span></a>
+    </section>
+  </main>
+
+  <footer class="work-footer"><span>© <span id="year"></span> Cemre Ceylan</span><a href="/#work">Tüm çalışmalara dön ↗</a></footer>
+  <script type="module" src="/web-design-page.js"></script>
+</body>
+</html>

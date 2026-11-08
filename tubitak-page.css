@@ -1,0 +1,8 @@
+.tubitak-page .magazine-intro h1{font-size:clamp(70px,14vw,220px);line-height:.72}
+.tubitak-page .magazine-intro h1 i{color:#e30613}
+.tubitak-page .magazine-intro-copy>span i{background:#e30613}
+.tubitak-page .book{width:min(88vw,calc((100svh - 180px) * 1.435));aspect-ratio:7700/5364}
+.tubitak-page .book-page img{background:#fff}
+.tubitak-page .flipbook-progress i{background:#e30613}
+.tubitak-page .magazine-outro{background:#e30613}
+@media(max-width:760px){.tubitak-page .magazine-intro h1{font-size:clamp(58px,20vw,108px);line-height:.78}.tubitak-page .book{width:94vw;aspect-ratio:7700/5364}}

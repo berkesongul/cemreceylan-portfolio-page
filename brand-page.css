@@ -1,0 +1,12 @@
+.brand-page{--brand-coral:#e96e51;--brand-cream:#f3e6d8}
+.brand-page .character-brand span{color:var(--brand-coral)}
+.brand-page .character-pin{background:radial-gradient(circle at 82% 8%,#8b3f35 0,transparent 35%),radial-gradient(circle at 8% 100%,#3b5b58 0,transparent 34%),#2b211f}
+.brand-page .character-world-head h2 em{color:#f09a7e}
+.brand-page .character-line::before{background:#ead9c6}
+.brand-page .character-paper{padding:clamp(10px,1.2vw,18px);background:var(--brand-cream)}
+.brand-page .character-paper img{max-width:min(70vw,680px)}
+.brand-page .character-outro{background:var(--brand-coral)}
+.brand-page .character-outro a{background:#2b211f}
+.brand-page .character-dialog{background:rgba(31,20,18,.96)}
+.brand-page .character-dialog-stage img{max-width:min(92vw,1200px);background:var(--brand-cream);box-shadow:0 20px 45px rgba(0,0,0,.25)}
+@media(max-width:720px){.brand-page .character-paper{padding:9px}.brand-page .character-paper img{max-width:84vw}}

@@ -1,0 +1,9 @@
+body.logo-page{--character-green:#7398ed;--character-line:rgba(24,27,23,.16)}
+.logo-page .character-brand span{color:#4268c4}
+.logo-page .character-pin{background:radial-gradient(circle at 82% 10%,#294c91 0,transparent 36%),#111a30}
+.logo-page .character-world-head h2 em{color:#83a7f5}
+.logo-page .character-paper{padding:clamp(12px,1.3vw,20px);background:#f7f4eb}
+.logo-page .character-paper img{aspect-ratio:1;max-width:min(62vw,560px)}
+.logo-page .character-outro{background:#bfcfd3}
+.logo-page .character-dialog-stage img{background:#f7f4eb;box-shadow:0 20px 45px rgba(0,0,0,.22)}
+@media(max-width:720px){.logo-page .character-paper{padding:12px}.logo-page .character-paper img{max-width:76vw}}

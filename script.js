@@ -50,7 +50,7 @@ $(".ability-close").addEventListener("click", () => {
 const doors = $$(".door");
 const activateDoor = (door, index) => {
   doors.forEach((item) => item.classList.toggle("is-active", item === door));
-  $(".door-caption > span").textContent = `${String(index + 1).padStart(2, "0")} / 07`;
+  $(".door-caption > span").textContent = `${String(index + 1).padStart(2, "0")} / ${String(doors.length).padStart(2, "0")}`;
   $(".door-caption h3").textContent = door.dataset.title;
   $(".door-caption p").textContent = door.dataset.copy;
 };
@@ -150,7 +150,7 @@ form.addEventListener("submit", (event) => {
   const data = new FormData(form);
   const subject = encodeURIComponent(`${selectedProject || "Yeni proje"} hakkında`);
   const body = encodeURIComponent(`Merhaba Cemre,\n\nBen ${data.get("name")}.\n\n${data.get("message") || "Bir proje hakkında konuşmak istiyorum."}\n\nBana ${data.get("email")} adresinden ulaşabilirsin.`);
-  window.location.href = `mailto:hello@cemreceylan.com?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:contact@cemreceylan.com?subject=${subject}&body=${body}`;
   dialog.close();
 });
 

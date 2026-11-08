@@ -13,6 +13,7 @@ export default defineConfig({
         character: resolve(import.meta.dirname, "works/karakter/index.html"),
         logo: resolve(import.meta.dirname, "works/logofolyo/index.html"),
         internship: resolve(import.meta.dirname, "works/stajlarim/index.html"),
+        web: resolve(import.meta.dirname, "works/web-tasarim/index.html"),
       },
     },
   },
