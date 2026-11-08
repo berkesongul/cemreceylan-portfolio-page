@@ -5,7 +5,7 @@ const assets = [
   { file: "Slide 16_9 - 46.png", title: "Marka kimliği çalışması 04" },
   { file: "Slide 16_9 - 47.png", title: "Marka kimliği çalışması 05" },
   { file: "Frame 427318251.png", title: "Marka kimliği çalışması 06" },
-].map((asset) => ({ ...asset, src: encodeURI(`/portfolio/pages/marka kimliği/${asset.file}`) }));
+].map((asset) => ({ ...asset, src: encodeURI(`/portfolio/pages/marka-kimligi/${asset.file}`) }));
 
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
