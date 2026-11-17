@@ -1,9 +1,6 @@
 const assets=[
-  {src:"/portfolio/pages/karakter%20tasarimi/Group%201351.png",title:"Filiz"},
-  {src:"/portfolio/pages/karakter%20tasarimi/Group%201352.png",title:"Tomurcuk"},
-  {src:"/portfolio/pages/karakter%20tasarimi/Group%201353.png",title:"Çiçek"},
-  {src:"/portfolio/pages/karakter%20tasarimi/Group%201354.png",title:"Yaprak"},
-  {src:"/portfolio/pages/karakter%20tasarimi/Group.png",title:"Kök"},
+  ...[1,2,3,4].map(number=>({src:`/portfolio/pages/karakter%20tasarimi/a.${number}.png`,title:`Karakter ${number}`,row:"a",framed:false})),
+  ...[1,2,3,4].map(number=>({src:`/portfolio/pages/karakter%20tasarimi/b.${number}.png`,title:`Karakter uygulaması ${number}`,row:"b",framed:true})),
 ];
 
 const $=(selector,scope=document)=>scope.querySelector(selector);
@@ -13,14 +10,16 @@ const reducedMotion=matchMedia("(prefers-reduced-motion: reduce)").matches;
 const updateClock=()=>{$("#clock").textContent=new Intl.DateTimeFormat("tr-TR",{timeZone:"Europe/Istanbul",hour:"2-digit",minute:"2-digit"}).format(new Date())};
 updateClock();setInterval(updateClock,30000);
 
-const track=$("#character-track");
-track.replaceChildren(...assets.map((asset,index)=>{
+const tracks=[$("#character-track-a"),$("#character-track-b")];
+const makePrint=(asset,index)=>{
   const figure=document.createElement("figure");
-  figure.className="character-print";
-  figure.innerHTML=`<span class="character-peg" aria-hidden="true"></span><button class="character-paper" type="button" aria-label="${asset.title} karakterini büyüt"><img src="${asset.src}" alt="${asset.title} karakter tasarımı" ${index<2?'fetchpriority="high"':'loading="lazy"'} decoding="async" /></button>`;
+  figure.className=`character-print ${asset.framed?"is-framed":"is-direct"}`;
+  figure.innerHTML=`<span class="character-peg" aria-hidden="true"></span><button class="character-paper" type="button" aria-label="${asset.title} görselini büyüt"><img src="${asset.src}" alt="${asset.title}" ${index<2?'fetchpriority="high"':'loading="lazy"'} decoding="async" /></button>`;
   $("button",figure).addEventListener("click",()=>openDialog(index));
   return figure;
-}));
+};
+tracks[0].replaceChildren(...assets.map((asset,index)=>asset.row==="a"?makePrint(asset,index):null).filter(Boolean));
+tracks[1].replaceChildren(...assets.map((asset,index)=>asset.row==="b"?makePrint(asset,index):null).filter(Boolean));
 
 const world=$("#character-world");
 const prints=$$(".character-print").map((element,index)=>({element,angle:0,velocity:0,phase:index*1.37+.4,speed:.72+(index%3)*.13}));
@@ -29,12 +28,13 @@ let distance=0,currentX=0,previousX=0;
 function layout(){
   const headerHeight=parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header-height"))||92;
   const viewportHeight=innerHeight-headerHeight;
-  const lineHeight=$(".character-line").clientHeight;
-  const printHeight=Math.max(1,Math.min(innerWidth<720?440:570,lineHeight-12));
-  world.style.setProperty("--print-height",`${printHeight}px`);
-  const lastPrint=prints.at(-1).element;
-  const rightPadding=parseFloat(getComputedStyle(track).paddingRight)||0;
-  distance=Math.max(0,lastPrint.offsetLeft+lastPrint.offsetWidth+rightPadding-innerWidth);
+  $$(".character-line").forEach(line=>line.style.setProperty("--print-height",`${Math.max(1,line.clientHeight-12)}px`));
+  distance=Math.max(0,...tracks.map(track=>{
+    const lastPrint=track.lastElementChild;
+    if(!lastPrint)return 0;
+    const rightPadding=parseFloat(getComputedStyle(track).paddingRight)||0;
+    return lastPrint.offsetLeft+lastPrint.offsetWidth+rightPadding-innerWidth;
+  }));
   world.style.setProperty("--world-height",`${viewportHeight+distance*(innerWidth<720?1.12:1)}px`);
 }
 
@@ -54,7 +54,7 @@ function animate(time){
   currentX=-progress*distance;
   const scrollVelocity=(currentX-previousX)/Math.max(delta,.5);
   previousX=currentX;
-  track.style.transform=`translate3d(${currentX.toFixed(1)}px,0,0)`;
+  tracks.forEach(track=>{track.style.transform=`translate3d(${currentX.toFixed(1)}px,0,0)`});
   $("#character-progress-bar").style.transform=`scaleX(${progress.toFixed(4)})`;
   const isVisible=rect.top<innerHeight&&rect.bottom>headerHeight;
   if(isVisible&&!reducedMotion){

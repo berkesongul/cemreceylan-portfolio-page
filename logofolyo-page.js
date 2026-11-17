@@ -1,10 +1,12 @@
 const assets=[
-  {src:"/portfolio/pages/logofolyo/Slide%2016_9%20-%2058.png",title:"Logo çalışması 01"},
-  {src:"/portfolio/pages/logofolyo/Slide%2016_9%20-%2059.png",title:"Logo çalışması 02"},
-  {src:"/portfolio/pages/logofolyo/Slide%2016_9%20-%2063.png",title:"Logo çalışması 03"},
-  {src:"/portfolio/pages/logofolyo/Slide%2016_9%20-%2064.png",title:"Logo çalışması 04"},
-  {src:"/portfolio/pages/logofolyo/Slide%2016_9%20-%2065.png",title:"Logo çalışması 05"},
-  {src:"/portfolio/pages/logofolyo/Slide%2016_9%20-%2066.png",title:"Logo çalışması 06"},
+  {src:"/portfolio/pages/logofolyo/Slide%2016_9%20-%2058.png?v=20261117",title:"Logo çalışması 01"},
+  {src:"/portfolio/pages/logofolyo/Slide%2016_9%20-%2059.png?v=20261117",title:"Logo çalışması 02"},
+  {src:"/portfolio/pages/logofolyo/Slide%2016_9%20-%2063.png?v=20261117",title:"Logo çalışması 03"},
+  {src:"/portfolio/pages/logofolyo/Slide%2016_9%20-%2064.png?v=20261117",title:"Logo çalışması 04"},
+  {src:"/portfolio/pages/logofolyo/Slide%2016_9%20-%2065.png?v=20261117",title:"Logo çalışması 05"},
+  {src:"/portfolio/pages/logofolyo/Slide%2016_9%20-%2066.png?v=20261117",title:"Logo çalışması 06"},
+  {src:"/portfolio/pages/logofolyo/Slide%2016_9%20-%2067.png?v=20261117",title:"Logo çalışması 07"},
+  {src:"/portfolio/pages/logofolyo/Slide%2016_9%20-%2068.png?v=20261117",title:"Logo çalışması 08"},
 ];
 
 const $=(selector,scope=document)=>scope.querySelector(selector);

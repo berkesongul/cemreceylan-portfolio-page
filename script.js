@@ -150,7 +150,7 @@ form.addEventListener("submit", (event) => {
   const data = new FormData(form);
   const subject = encodeURIComponent(`${selectedProject || "Yeni proje"} hakkında`);
   const body = encodeURIComponent(`Merhaba Cemre,\n\nBen ${data.get("name")}.\n\n${data.get("message") || "Bir proje hakkında konuşmak istiyorum."}\n\nBana ${data.get("email")} adresinden ulaşabilirsin.`);
-  window.location.href = `mailto:contact@cemreceylan.com?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:iletisim@cemreceylan.com?subject=${subject}&body=${body}`;
   dialog.close();
 });
 

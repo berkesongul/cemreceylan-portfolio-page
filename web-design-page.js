@@ -1,16 +1,5 @@
-import { portfolioCategories } from "/portfolio-data.js";
-
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
-
-const categoryNav = $("#category-nav");
-categoryNav.replaceChildren(...Object.entries(portfolioCategories).map(([key, item]) => {
-  const link = document.createElement("a");
-  link.href = item.path;
-  link.textContent = item.title;
-  if (key === "web") link.className = "is-active";
-  return link;
-}));
 
 const updateClock = () => {
   $("#clock").textContent = new Intl.DateTimeFormat("tr-TR", {

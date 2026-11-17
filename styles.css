@@ -6,6 +6,15 @@
 
 .door{text-decoration:none;color:inherit}
 
+/* Shared category navigation used by every portfolio door page. */
+.category-nav{display:flex;gap:8px;overflow-x:auto;padding:24px var(--pad);border-top:1px solid var(--line);border-bottom:1px solid var(--line);scrollbar-width:none;background:#f3f0eb;position:sticky;top:92px;z-index:15}
+.category-nav::-webkit-scrollbar{display:none}
+.category-nav a{flex:0 0 auto;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:12px 16px;font-size:13px;white-space:nowrap}
+.category-nav a.is-active{background:var(--ink);color:#fff}
+.magazine-page .category-nav{top:0}
+.character-page .category-nav{top:var(--header-height)}
+@media(max-width:760px){.category-nav{top:76px}.magazine-page .category-nav{top:0}.character-page .category-nav{top:var(--header-height)}}
+
 /* Scroll-driven story */
 .story{position:relative;padding:0;background:linear-gradient(135deg,rgba(185,217,178,.28),transparent 30%,transparent 70%,rgba(178,198,232,.34));overflow:clip}
 .story:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.32;background:repeating-linear-gradient(45deg,transparent 0 7px,rgba(29,27,26,.035) 7px 8px)}
