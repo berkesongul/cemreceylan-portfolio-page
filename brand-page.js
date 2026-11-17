@@ -45,9 +45,8 @@ let previousX = 0;
 function layout() {
   const headerHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header-height")) || 92;
   const viewportHeight = innerHeight - headerHeight;
-  const headHeight = $(".character-world-head").offsetHeight;
-  const footerHeight = $(".character-progress").offsetHeight;
-  const printHeight = Math.max(280, Math.min(innerWidth < 720 ? 430 : 540, viewportHeight - headHeight - footerHeight - 66));
+  const lineHeight = $(".character-line").clientHeight;
+  const printHeight = Math.max(1, Math.min(innerWidth < 720 ? 430 : 540, lineHeight - 12));
   world.style.setProperty("--print-height", `${printHeight}px`);
   const lastPrint = prints.at(-1).element;
   const rightPadding = parseFloat(getComputedStyle(track).paddingRight) || 0;
